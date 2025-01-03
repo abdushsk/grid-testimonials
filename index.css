@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    font-family: "Barlow Semi Condensed", serif;
+}
+body{
+    background: hsl(210, 46%, 95%);
+}
+.parent{
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-auto-flow: row;
+    gap: 20px;
+    grid-template-columns: repeat(4, 1fr);;
+    grid-template-rows: 1fr 1fr;
+}
+
+.parent > *{
+    padding: 3vh;
+    display: flex;
+    gap: 20px;
+    position: relative;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.first{
+    grid-column: span 2;
+    background: hsl(263, 55%, 52%)
+}
+
+.arrow{
+    position: absolute;
+    right: 10%;
+    font-size: 100px;
+    color: red;
+}
+
+.title{
+    font-size: clamp(1rem, 1rem + 0.2vw, 3rem);
+    font-family: "Barlow Semi Condensed", serif;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: white;
+    z-index: 10;
+}
+
+.dec{
+    color:hsla(210, 46%, 95%, 0.7);
+    line-height: 150%;
+    flex:1;
+    z-index: 10;
+    font-size: clamp(0.8rem, 0.8rem + 0.1vw, 3rem);
+}
+
+.header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.header-img{
+    border-radius: 50px;
+    margin-right: 1rem;
+    height: 70%; /* Makes the image's height match the text's height */
+    object-fit: contain; /* Ensures the image scales proportionally */
+}
+
+.name{
+    font-size: 1rem;
+    color: white;
+}
+
+.post{
+    color: rgba(255, 255, 255, 0.542);
+}
+
+.fourth *, .third *{
+    color: black;
+}
+
+.fourth .dec, .third .dec{
+    color: gray;
+}
+
+.fourth .post{
+    color: gray;
+}
+
+.third .post{
+    color: gray;
+}
+
+.second{
+    background: hsl(217, 19%, 35%);
+}
+
+.parent > * {
+    border-radius: 10px;
+}
+
+.parent .fourth{
+    background: white;
+    color: black;
+}
+
+
+.fifth{
+    grid-column: span 2;
+    background: hsl(219, 29%, 14%);
+}
+
+.third{
+    background: white;
+    grid-row: span 2;
+}
+
+.cont{
+    height: 100vh;
+    box-sizing: border-box;
+    padding: 10vh;
+}
+
+@media only screen and (max-width: 1300px) {
+    .third {
+        grid-row: span 1;
+        grid-column: span 2;
+    }
+
+    .parent{
+    grid-template-columns: repeat(3, 1fr);;
+    }
+
+}
+
+
+@media only screen and (max-width: 1000px) {
+    .parent > *{
+        grid-row: span 1;
+        grid-column: span 1;
+    }
+
+    .third{
+        order: 5;
+        /* order: 1; */
+    }
+
+    .parent{
+        grid-template-columns: repeat(1, 1fr);;
+    }
+
+    .cont{
+        padding: 2vh;
+    }
+}
